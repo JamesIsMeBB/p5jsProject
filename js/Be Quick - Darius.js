@@ -135,8 +135,7 @@ WANNA TEST YOUR SKILLS AGAIN?
 */
  
  
-//CIRCLE
-
+CIRCLE
 function draw(){
   background(900);
   textAlign(CENTER);
@@ -163,9 +162,7 @@ function draw(){
   fill("pink")
  
 }
-
-//RECTANGLE
-
+RECTANGLE
 function setup() 
 {
   createCanvas(500, 500);
@@ -197,7 +194,7 @@ function draw(){
  
 }
  
-//TRIANGLE
+TRIANGLE
  
  
 function setup() 
@@ -232,7 +229,7 @@ function draw(){
 }
  
  
-//Congrats Screen
+Congrats Screen
  
 function screenCongrats()
 {
@@ -246,6 +243,6 @@ function screenCongrats()
  
   fill("black")
   text("CONGRATS! You chose the right object!", 240, 100);
-  time: (display time it took)
+  //time: (display time it took)
  
 }
