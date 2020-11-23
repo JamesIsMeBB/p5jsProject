@@ -16,9 +16,9 @@ function setup()
 {
   playSound.setVolume(0.088);
   var cnv = createCanvas(1150, 600);
-  var w = (windowWidth - width) / 2;
-  var h = (windowHeight - height) / 2;
-  cnv.position(w, h);
+  var w2 = (windowWidth - width) / 2;
+  var h2 = (windowHeight - height) / 2;
+  cnv.position(w2, h2);
   //creating random number for 
   randomize();
 }
