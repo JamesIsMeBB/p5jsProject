@@ -33,13 +33,13 @@ function setup() {
   cnv.position(w, h);
   textFont('Georgia')
   textSize(50)
-  img = loadImage('https://i.ibb.co/R20r0Kr/beQuick.jpg')
+  img = loadImage('imgs/beQuick.jpg')
   
   
-  img1 = loadImage('https://i.ibb.co/FhWryH0/minder-Finder.jpg')
+  img1 = loadImage('imgs/minderFinder.jpg')
   
   
-  img2 = loadImage('https://i.ibb.co/WKS5J6X/reaction.jpg')
+  img2 = loadImage('imgs/reaction.jpg')
   
   c1 = color(188,178,255)
   c2 = color(189,211,255)
