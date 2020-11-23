@@ -7,14 +7,10 @@ r = g = b = a =c=x=z=n=m=255;
  
 var screen = false;
  
-//loads sound
-function preload(){
-  playSound = loadSound("sounds/Input-02.mp3");
-  bab = loadSound("sounds/bababooey-sound-effect.mp3");
-}
- 
 function setup() 
 {
+  playSound = loadSound("sounds/Input-02.mp3");
+  bab = loadSound("sounds/bababooey-sound-effect.mp3");
   playSound.setVolume(0.088);
   var cnv = createCanvas(1150, 600);
   var w = (windowWidth - width) / 2;
