@@ -31,19 +31,19 @@ function setup() {
   var w = (windowWidth - width) / 2;
   var h = (windowHeight - height) / 2;
   cnv.position(w, h);
-  textFont('Georgia')
-  textSize(50)
-  img = loadImage('imgs/beQuick.jpg')
+  textFont('Georgia');
+  textSize(50);
+  img = loadImage('imgs/beQuick.jpg');
   
   
-  img1 = loadImage('imgs/minderFinder.jpg')
+  img1 = loadImage('imgs/minderFinder.jpg');
   
   
-  img2 = loadImage('imgs/reaction.jpg')
+  img2 = loadImage('imgs/reaction.jpg');
   
-  c1 = color(188,178,255)
-  c2 = color(189,211,255)
-  setGradient(0, 0, 1150, 600, c1, c2, 1) 
+  c1 = color(188,178,255);
+  c2 = color(189,211,255);
+  setGradient(0, 0, 1150, 600, c1, c2, 1);
 }
  
  
