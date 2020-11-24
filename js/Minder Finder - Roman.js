@@ -1,6 +1,4 @@
 p5.disableFriendlyErrors = true;
-let playSound;
-let bab;
 let r, g, b;
 let a, c, w, x, z, n, m;
 r = g = b = a =c=x=z=n=m=255;
