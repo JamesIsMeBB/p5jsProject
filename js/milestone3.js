@@ -7,6 +7,7 @@ function setup()
   cnv.position(w, h);
 }
 
+//TEST
 // Boolean to determine between screen one and screen two.
 var screen = false;
 
