@@ -1,6 +1,8 @@
 p5.disableFriendlyErrors = true;
 let r, g, b;
 let a, c, w, x, z, n, m;
+let playSound;
+let bab;
 r = g = b = a =c=x=z=n=m=255;
  
 var screen = false;
