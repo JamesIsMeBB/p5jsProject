@@ -7,40 +7,39 @@ function setup()
   var cnv = createCanvas(1150, 600);
   w = (windowWidth - width) / 2;
   h = (windowHeight - height) / 2;
-  var screenChanger = 0;
   cnv.position(w, h);
 }
 
 // [James] Added code into the draw function that consists of if-statements to change between many of your screens! 
 function draw() 
 {
-	if (screenChanger = 0)
+	if (screenChanger == 0)
 	{
 		screenWelcome();
 	}
 	
-	else if (screenChanger = 1)
+	else if (screenChanger == 1)
 	{
 		screenFail();
 	}
 	
-	else if (screenChanger = 2)
+	else if (screenChanger == 2)
 	{
 		// [James] Added this screen for testing, example, and for you to use and customize if you'd like!
 		screenDecision1();
 	}
 	
-	else if (screenChanger = 3)
+	else if (screenChanger == 3)
 	{
 		// [James] Any Screen you want to display with a certain "screenChanger" number, place here.
 	}
 	
-	else if (screenChanger = 4)
+	else if (screenChanger == 4)
 	{
 		// [James] Any Screen you want to display with a certain "screenChanger" number, place here.
 	}
 	
-	else if (screenChanger = 5)
+	else if (screenChanger == 5)
 	{
 		screenCongrats();
 	}
