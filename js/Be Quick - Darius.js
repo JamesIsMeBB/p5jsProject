@@ -21,7 +21,7 @@ function draw()
 	
 	else if (screenChanger = 1)
 	{
-		ScreenFail();
+		screenFail();
 	}
 	
 	else if (screenChanger = 2)
