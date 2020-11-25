@@ -7,12 +7,21 @@ var time = 0;
 var early = false;
 stop = false;
 stop2 = false;
+var w;
+var h;
+ 
+function preload(){
+ 
+  playSound = loadSound("sounds/Ding.mp3");
+ 
+}
  
 function setup() {
-  var cnv = createCanvas(1150, 600);
-  var w = (windowWidth - width) / 2;
-  var h = (windowHeight - height) / 2;
+   var cnv = createCanvas(1150, 600);
+  w = (windowWidth - width) / 2;
+  h = (windowHeight - height) / 2;
   cnv.position(w, h);
+ 
 }
  
  
@@ -26,6 +35,13 @@ function mouseClicked()
 {
     if (mouseButton == LEFT && timer < 0)
     {
+ 
+ 
+      playSound.setVolume(.3);
+ 
+      playSound.play();
+ 
+ 
       result = true;
     }  
 }
@@ -62,9 +78,9 @@ function resetButton()
 	if (typeof button == "undefined")
 	{
 		button = createButton('reset');
-		button.position(600 , 465);
+		button.position((w+520),(h+400));
         button.size(100,40);
-        button.style("font-size", 56);
+        button.style("font-size", "30px");
  
  
  
@@ -81,7 +97,7 @@ function resetButton()
 function game()
 {
  
-  background(95,240,240);
+  background(188,178,255);
  
  //title
   stroke(0);
@@ -126,7 +142,7 @@ else
 //changes background color
  if(timer < 0)
 {
-	background(50,200,65);
+	background(189,211,255);
   stop2 = true;
  
 	if (time >= 0)

@@ -6,15 +6,17 @@ let bab;
 r = g = b = a =c=x=z=n=m=255;
  
 var screen = false;
-
+var w2;
+var h2
 function setup() 
 {
+  
   playSound = loadSound("sounds/Input-02.mp3");
   bab = loadSound("sounds/bababooey-sound-effect.mp3");
   playSound.setVolume(0.088);
   var cnv = createCanvas(1150, 600);
-  var w2 = (windowWidth - width) / 2;
-  var h2 = (windowHeight - height) / 2;
+  w2 = (windowWidth - width) / 2;
+  h2 = (windowHeight - height) / 2;
   cnv.position(w2, h2);
   //creating random number for 
   randomize();
@@ -62,7 +64,7 @@ function mouseClicked()
 function screenOne()
 {
   
-  background(211, 211, 211);
+  background(189,211,255);
   fill(255, 255, 0);
   //drawing circles
   r = g = b = a = w = c = x = z = n = m = 255;
@@ -94,17 +96,18 @@ function screenOne()
 function screenTwo()
 {
  
-  background(211, 211, 211);
+  background(189,211,255);
   r = g = b = a = w = c = x = z = n = m = 255;
  
   button = createButton('submit');
-  button.position(670 , 465);
+  button.position((w2 + 620), (h2 + 400));
   button.mousePressed(check);
   //this adds the value in a pattern (Not addition)
   var rightNum = num1 + '' + num2 + ''+num3 + '' + num4 + '' + num5;
   //input textbox for user
   input = createInput();
-  input.position(440, 465);
+  input.position((w2 + 420), (h2 + 400)
+);
   //sets guess value to the user input
  
   textSize(50);
@@ -118,7 +121,7 @@ function screenTwo()
 //creates 6 circles with randomized numbers
 function screenThree(){
   
-  background(211, 211, 211);
+  background(189,211,255);
   fill(255, 255, 0);
   // Draw a circle
   strokeWeight(2);
@@ -145,7 +148,7 @@ function screenThree(){
   text(num6, 985, 260);
  
   nextScreen = createButton('Next!');
-  nextScreen.position(500,450);
+  nextScreen.position((w2 + 520), (h2 + 400));
   nextScreen.mousePressed(screenFour);
 }
 //asks for user guess from second level
@@ -155,12 +158,13 @@ function screenFour(){
   fill(255, 255, 0);
   button = createButton('submit');
  
-  button.position(670 , 465);
+  button.position((w2 + 620), (h2 + 400)
+);
   button.mousePressed(checkSecond);
  
   //input textbox for user
   input = createInput();
-  input.position(440, 465);
+  input.position((w2 + 420), (h2 + 400));
   //sets guess value to the user input
   textSize(50);
   fill(0, 0, 0);
@@ -203,7 +207,8 @@ function screenFive(){
   text(num7, 260 + 750, 260);
   
   nextScreen = createButton('Next!');
-  nextScreen.position(500,450);
+  nextScreen.position((w2 + 720), (h2 + 400)
+);
   nextScreen.mousePressed(screenSix);
 }
 //makes the screen that asks for input for third level
@@ -212,12 +217,14 @@ function screenSix(){
   background(211, 211, 211);
   fill(255, 255, 0);
   button = createButton('submit');
-  button.position(670 , 465);
+  button.position((w2 + 620), (h2 + 400)
+);
   button.mousePressed(checkThird);
  
   //input textbox for user
   input = createInput();
-  input.position(440, 465);
+  input.position((w2 + 420), (h2 + 400)
+);
   //sets guess value to the user input
   textSize(50);
   fill(0, 0, 0);
@@ -240,7 +247,8 @@ function checkSecond() {
     fill(0,0,0);
     text('Correct!', 375, 100);
     button = createButton('Next');
-    button.position(670,465);
+    button.position((w2 + 620), (h2 + 400)
+);
     button.mousePressed(screenFive);
   }else
   {
@@ -249,9 +257,10 @@ function checkSecond() {
     text('The pattern was '+rightNum, 250, 290);
   }
 }
+ 
 //checks for the guess in the third level
 function checkThird() {
- 
+  
   button.hide();
   const guess = input.value();
   //this adds the value in a pattern (Not addition)
@@ -263,7 +272,7 @@ function checkThird() {
     fill(0,0,0);
     text('Complete! You finished the game!', 155, 100);
     button = createButton('Restart');
-    button.position(670,465);
+    button.position((w2 + 620), (h2 + 400));
     button.mousePressed(reset);
   }else{
     resetButton();
@@ -272,6 +281,7 @@ function checkThird() {
   textSize(60);
   text('The pattern was '+rightNum, 250, 290);
 }
+ 
 //checks if the guess is correct in first level
 function check() {
   button.hide();
@@ -284,9 +294,7 @@ function check() {
     fill(0,0,0);
     text('Correct!', 375, 100);
     button = createButton('Next!');
-    button.style("font-size", "48px");
-    button.size("")
-    button.position(670 , 465);
+    button.position((w2 + 620), (h2 + 400));
     button.mousePressed(reset2);
   }else{
     resetButton();
@@ -302,7 +310,7 @@ function resetButton()
   fill(0,0,0);
   text('INCORRECT', 300, 100);
   button = createButton('reset');
-  button.position(670 , 465);
+  button.position((w2 + 620), (h2 + 400));
   button.mousePressed(reset);
 }
 //function to reset to main menu
@@ -321,7 +329,7 @@ function reset()
   randomize();
   screenOne();
   nextOne = createButton('Next');
-  nextOne.position(500,450);
+  nextOne.position((w2 + 520), (h2 + 400));
   nextOne.mousePressed(screenTwo);
 }
 //function to go on next level(not a reset, too lazy to change function name)
