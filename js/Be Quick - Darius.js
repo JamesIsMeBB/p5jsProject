@@ -1,46 +1,53 @@
+var w;
+var h;
+var screenChanger = 0;
+
 function setup() 
 {
   var cnv = createCanvas(1150, 600);
-  var w = (windowWidth - width) / 2;
-  var h = (windowHeight - height) / 2;
+  w = (windowWidth - width) / 2;
+  h = (windowHeight - height) / 2;
+  var screenChanger = 0;
   cnv.position(w, h);
 }
- 
-var screen = false;
- 
+
+// [James] Added code into the draw function that consists of if-statements to change between many of your screens! 
 function draw() 
 {
-    if (screen == false)
-    {
-        screenOne();
-    }
- 
-    else if (screen == true)
-    {
-        screenTwo();
-    }
-    else if (screen == false)
-    {
-        screenThree();
-    }
- 
+	if (screenChanger = 0)
+	{
+		screenWelcome();
+	}
+	
+	else if (screenChanger = 1)
+	{
+		ScreenFail();
+	}
+	
+	else if (screenChanger = 2)
+	{
+		// [James] Added this screen for testing, example, and for you to use and customize if you'd like!
+		screenDecision1();
+	}
+	
+	else if (screenChanger = 3)
+	{
+		// [James] Any Screen you want to display with a certain "screenChanger" number, place here.
+	}
+	
+	else if (screenChanger = 4)
+	{
+		// [James] Any Screen you want to display with a certain "screenChanger" number, place here.
+	}
+	
+	else if (screenChanger = 5)
+	{
+		screenCongrats();
+	}
 }
  
-function mouseClicked()
-{
-    if (mouseButton == LEFT && screen == false)
-    {
-        screen = true;
-    }
- 
-    else if (mouseButton == LEFT && screen == true)
-    {
-        screen = false;
-    }
-}
- 
- 
-function screenOne()
+ // [James] Welcome screen? 
+function screenWelcome()
 {
  background(900);
   textAlign(CENTER);
@@ -67,9 +74,13 @@ function screenOne()
  
   fill("red")
   triangle(100, 200, 40, 300, 100, 300)
+  
+	// What screen you want it to go to
+	// screenChanger = [some number here];
 }
  
-function screenTwo()
+// [James] Fail Screen?
+function screenFail()
 { 
   background(900);
   textAlign(CENTER);
@@ -81,7 +92,66 @@ function screenTwo()
  
   fill("black")
   text("WRONG SHAPE", 230, 100);
-time://display time
+  
+  //time://display time
+  
+ 	// What screen you want it to go to
+	// screenChanger = [some number here];
+}
+ 
+//[James] Congrats Screen
+ 
+function screenCongrats()
+{
+ background(900);
+  textAlign(CENTER);
+  textSize(75);
+  textFont("Impact", 30)
+ 
+  fill("white")
+  rect(0, 0, 500, 500)
+ 
+  fill("black")
+  text("CONGRATS! You chose the right object!", 240, 100);
+  //time: (display time it took)
+  
+ 	// What screen you want it to go to
+	// screenChanger = [some number here];
+ 
+}
+
+function screenDecision1()
+{
+	background(400);
+	
+	// [James] Your code for background, shapes, looks, all that jazz will be above. 
+	// This screen will have the code in it for the clicking mechanic that will separate the screen into three parts. 
+	// Make sure your three shapes you present to make the decision are divided into three equal VERTICAL sections on the screen. 
+	// Meaning, you will put one shape onto the first vertical section alone, another onto the second alone, and so on.
+	
+	function mouseClicked()
+	{
+		if ( mouseButton == LEFT && (mouseX > w) && (mouseX < (w + 383) ) && (mouseY > h) && (mouseY < (h + 600) ) )
+		{
+			rect( (w + 191), (h + 300), 200, 200);
+			// What screen you want it to go to
+			// screenChanger = [some number here];
+		}
+	
+		else if ( mouseButton == LEFT && (mouseX > w + 383) && (mouseX < (w + 766) ) && (mouseY > h) && (mouseY < (h + 600) ) )
+		{
+			rect( (w + 575), (h + 300), 200, 200);
+			// What screen you want it to go to
+			// screenChanger = [some number here];
+		}
+	
+		else if ( mouseButton == LEFT && (mouseX > w + 766) && (mouseX < (w + 1150) ) && (mouseY > h) && (mouseY < (h + 600) ) )
+		{	
+			rect( (w + 958), (h + 300), 200, 200);
+			// What screen you want it to go to
+			// screenChanger = [some number here];
+		}
+	}
 }
  
  
@@ -90,6 +160,7 @@ time://display time
  
 /*
 ****CODE FOR ADDITIONAL SCREENS. USE LATER******
+
 WOULD YOU LIKE TO TRY AGAIN?
   background(900);
   textAlign(CENTER);
@@ -131,11 +202,14 @@ WANNA TEST YOUR SKILLS AGAIN?
 ----------------------------------------------------------
  
  
- 
 */
  
  
-CIRCLE
+// [James] Not sure if these are additional screens below or not so I won't delete this code, but you can't use multiple draw functions!
+//CIRCLE
+
+/*
+====================================================================
 function draw(){
   background(900);
   textAlign(CENTER);
@@ -162,11 +236,9 @@ function draw(){
   fill("pink")
  
 }
-RECTANGLE
-function setup() 
-{
-  createCanvas(500, 500);
-}
+
+//RECTANGLE
+
 function draw(){
   background(900);
   textAlign(CENTER);
@@ -194,13 +266,8 @@ function draw(){
  
 }
  
-TRIANGLE
+//TRIANGLE
  
- 
-function setup() 
-{
-  createCanvas(500, 500);
-}
 function draw(){
   background(900);
   textAlign(CENTER);
@@ -229,7 +296,7 @@ function draw(){
 }
  
  
-Congrats Screen
+//Congrats Screen
  
 function screenCongrats()
 {
@@ -246,3 +313,6 @@ function screenCongrats()
   //time: (display time it took)
  
 }
+
+====================================================================
+*/
