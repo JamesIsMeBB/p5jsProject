@@ -1,5 +1,5 @@
 //sets the timer to a random time at which to change the background color
-var timer = (Math.random() * (7) ) + 1;
+var timer = (Math.random() * (7) ) + 2;
  
  
 var result = false;
@@ -65,7 +65,7 @@ function mousePressed()
 {
   if(stop2 == false)
     {
-  timer = (Math.random() * (7) ) + 2;
+  timer = (Math.random() * (8) ) + 2;
   stop = true;
  
     }

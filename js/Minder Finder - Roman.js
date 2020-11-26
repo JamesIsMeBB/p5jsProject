@@ -10,7 +10,6 @@ var w2;
 var h2
 function setup() 
 {
-  
   playSound = loadSound("sounds/Input-02.mp3");
   bab = loadSound("sounds/bababooey-sound-effect.mp3");
   playSound.setVolume(0.088);
@@ -81,6 +80,11 @@ function screenOne()
   circle(775, 250, 120);
   fill(n, 255, 100, 127);
   circle(975, 250, 120);
+
+  stroke(0);
+  strokeWeight(2);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
   textSize(50);
   fill(0, 0, 0);
   text('Remember the pattern! Click to Start!', 100, 100);
@@ -113,7 +117,11 @@ function screenTwo()
   input.position((w2 + 420), (h2 + 400)
 );
   //sets guess value to the user input
- 
+										
+  stroke(0);
+  strokeWeight(2);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
   textSize(50);
   fill(0, 0, 0);
   //text
@@ -138,6 +146,10 @@ function screenThree(){
   circle(820, 250, 100);
   circle(995,250,100)
   
+  stroke(0);
+  strokeWeight(2);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
   textSize(50);
   fill(0, 0, 0);
   text('Remember the pattern! Click to Start!', 100, 100);
@@ -175,9 +187,13 @@ function screenFour(){
   input.size(260,34);
   input.position((w2 + 420), (h2 + 400));
   //sets guess value to the user input
+  
+  stroke(0);
+  strokeWeight(2);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
   textSize(50);
   fill(0, 0, 0);
-  //text
   text('What was the pattern of the number?', 100, 100);
 }
 //creates 7 circles with randomized numbers
@@ -200,7 +216,11 @@ function screenFive(){
   circle(270 + 450, 250, 100);
   circle(270 + 600, 250,100);
   circle(270 + 750, 250,100);
-  
+
+  stroke(0);
+  strokeWeight(2);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
   textSize(50);
   fill(0, 0, 0);
   text('Remember the pattern! Click to start!', 100, 100);
@@ -241,9 +261,13 @@ function screenSix(){
   input.position((w2 + 420), (h2 + 400)
 );
   //sets guess value to the user input
+  
+  stroke(0);
+  strokeWeight(2);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
   textSize(50);
   fill(0, 0, 0);
-  //text
   text('What was the pattern of the number?', 100, 100);
 }
 //checks for the guess in the second level
@@ -258,9 +282,14 @@ function checkSecond() {
   {
     playSound.play();
     background(0,255,0);
-    textSize(90);
+
+	stroke(0);
+	strokeWeight(2);
+	fill('white');
+	rect(50,35, 1050, 100, 20);
+    textSize(75);
     fill(0,0,0);
-    text('Correct!', 375, 100);
+    text('Correct!', 395, 110);
     button = createButton('Next!');
     button.size(100,40);
     button.style("font-size", "30px");
@@ -270,7 +299,13 @@ function checkSecond() {
   }else
   {
     resetButton();
+
+	stroke(0);
+	strokeWeight(2);
+	fill('white');
+    rect(50,35, 1050, 100, 20);
     textSize(60);
+	fill(0, 0, 0);
     text('The pattern was '+rightNum, 250, 290);
   }
 }
@@ -285,7 +320,12 @@ function checkThird() {
   if(guess == rightNum){
     playSound.play();
     background(0,255,0);
-    textSize(60);
+
+	stroke(0);
+	strokeWeight(2);
+	fill('white');
+	rect(50,35, 1050, 100, 20);
+    textSize(75);
     fill(0,0,0);
     text('Complete! You finished the game!', 155, 100);
     button = createButton('Restart!');
@@ -296,7 +336,11 @@ function checkThird() {
   }else{
     resetButton();
   }
-  
+
+  stroke(0);
+  strokeWeight(2);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
   textSize(60);
   text('The pattern was '+rightNum, 250, 290);
 }
@@ -309,9 +353,14 @@ function check() {
   if(guess == rightNum){
     playSound.play();
     background(0,255,0);
-    textSize(90);
+
+	stroke(0);
+	strokeWeight(2);
+	fill('white');
+	rect(50,35, 1050, 100, 20);
+    textSize(75);
     fill(0,0,0);
-    text('Correct!', 375, 100);
+    text('Correct!', 395, 110);
     button = createButton('Next!');
     button.size(100,40);
     button.style("font-size", "30px");
@@ -319,7 +368,13 @@ function check() {
     button.mousePressed(reset2);
   }else{
     resetButton();
+
+	stroke(0);
+	strokeWeight(2);
+	fill('white');
+	rect(50,35, 1050, 100, 20);
     textSize(60);
+	fill(0,0,0);
     text('The pattern was '+rightNum, 250, 290);
   }
 }
@@ -327,9 +382,14 @@ function check() {
 function resetButton()
 {
   background(255,0,0);
-  textSize(90);
+
+  stroke(0);
+  strokeWeight(2);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
+  textSize(75);
   fill(0,0,0);
-  text('INCORRECT', 300, 100);
+  text('INCORRECT!', 300, 100);
   button = createButton('Reset!');
   button.size(100,34);
   button.style("font-size", "25px");
