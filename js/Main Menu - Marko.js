@@ -49,6 +49,7 @@ function setup() {
  
 function draw() {
  
+	background("blue");
   //title
   stroke(0);
   strokeWeight(4);
@@ -112,4 +113,38 @@ function draw() {
   rect(825,200,200,190)
   image(img, 825,200,200,190)
 }
+
+// React
+// rect(112,426, 170, 120, 20);
+
+// MINDER Finder
+//  rect(475,426, 170, 120, 20);
+
+// BE Quick
+//  rect(840,426, 170, 120, 20);
+
+function mouseClicked()
+{
+	if ( (mouseX > 112) && (mouseX < 282) && (mouseY > 426) && (mouseY < 546) )
+	{
+		window.location.href = "Reaction Time.html";
+	}
+	
+	else if ( (mouseX > 475) && (mouseX < 645) && (mouseY > 426) && (mouseY < 546) )
+	{
+		window.location.href = "Minder Finder.html";
+	}
+	
+	else if ( (mouseX > 840) && (mouseX < 1010) && (mouseY > 426) && (mouseY < 546) )
+	{
+		window.location.href = "Be Quick.html";
+	}
+	
+}
+
+
+
+
+
+
 

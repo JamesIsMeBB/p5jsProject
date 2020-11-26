@@ -86,11 +86,11 @@ function screenOne()
   text('Remember the pattern! Click to Start!', 100, 100);
   //putting in text in circles
  
-  text(num1, 165, 260);
-  text(num2, 365, 260);
-  text(num3, 565, 260);
-  text(num4, 765, 260);
-  text(num5, 965, 260);
+  text(num1, 162, 263);
+  text(num2, 362, 263);
+  text(num3, 562, 263);
+  text(num4, 762, 263);
+  text(num5, 962, 263);
  
 }
 function screenTwo()
@@ -100,12 +100,16 @@ function screenTwo()
   r = g = b = a = w = c = x = z = n = m = 255;
  
   button = createButton('submit');
-  button.position((w2 + 620), (h2 + 400));
+  button.size(100,40);
+  button.style("font-size", "30px");
+  button.position((w2 + 720), (h2 + 400));
   button.mousePressed(check);
   //this adds the value in a pattern (Not addition)
   var rightNum = num1 + '' + num2 + ''+num3 + '' + num4 + '' + num5;
   //input textbox for user
   input = createInput();
+  input.size(260,34);
+  input.style("font-size", "30px");
   input.position((w2 + 420), (h2 + 400)
 );
   //sets guess value to the user input
@@ -140,14 +144,16 @@ function screenThree(){
   //putting in text in circles
   //check if visual is equal to correct pattern with randomize()
   randomize();
-  text(num1, 110, 260);
-  text(num2, 285, 260);
-  text(num3, 460, 260);
-  text(num4, 635, 260);
-  text(num5, 810, 260);
-  text(num6, 985, 260);
+  text(num1, 107, 263);
+  text(num2, 282, 263);
+  text(num3, 457, 263);
+  text(num4, 632, 263);
+  text(num5, 807, 263);
+  text(num6, 982, 263);
  
   nextScreen = createButton('Next!');
+  nextScreen.size(100,40);
+  nextScreen.style("font-size", "30px");
   nextScreen.position((w2 + 520), (h2 + 400));
   nextScreen.mousePressed(screenFour);
 }
@@ -157,13 +163,16 @@ function screenFour(){
   background(211, 211, 211);
   fill(255, 255, 0);
   button = createButton('submit');
- 
-  button.position((w2 + 620), (h2 + 400)
+  button.size(100,40);
+  button.style("font-size", "30px");
+  button.position((w2 + 720), (h2 + 400)
 );
   button.mousePressed(checkSecond);
  
   //input textbox for user
   input = createInput();
+  input.style("font-size", "30px");
+  input.size(260,34);
   input.position((w2 + 420), (h2 + 400));
   //sets guess value to the user input
   textSize(50);
@@ -198,16 +207,18 @@ function screenFive(){
   //putting in text in circles
   //check if visual is equal to correct pattern with randomize()
   randomize();
-  text(num1, 110, 260);
-  text(num2, 260, 260);
-  text(num3, 260 + 150, 260);
-  text(num4, 260 + 300, 260);
-  text(num5, 260 + 450, 260);
-  text(num6, 260 + 600, 260);
-  text(num7, 260 + 750, 260);
+  text(num1, 107, 263);
+  text(num2, 257, 263);
+  text(num3, 260 + 147, 263);
+  text(num4, 260 + 297, 263);
+  text(num5, 260 + 447, 263);
+  text(num6, 260 + 597, 263);
+  text(num7, 260 + 747, 263);
   
   nextScreen = createButton('Next!');
-  nextScreen.position((w2 + 720), (h2 + 400)
+  nextScreen.size(100,40);
+  nextScreen.style("font-size", "30px");
+  nextScreen.position((w2 + 520), (h2 + 400)
 );
   nextScreen.mousePressed(screenSix);
 }
@@ -217,12 +228,16 @@ function screenSix(){
   background(211, 211, 211);
   fill(255, 255, 0);
   button = createButton('submit');
-  button.position((w2 + 620), (h2 + 400)
+  button.size(100,40);
+  button.style("font-size", "30px");
+  button.position((w2 + 720), (h2 + 400)
 );
   button.mousePressed(checkThird);
  
   //input textbox for user
   input = createInput();
+  input.style("font-size", "30px");
+  input.size(260,34);
   input.position((w2 + 420), (h2 + 400)
 );
   //sets guess value to the user input
@@ -246,8 +261,10 @@ function checkSecond() {
     textSize(90);
     fill(0,0,0);
     text('Correct!', 375, 100);
-    button = createButton('Next');
-    button.position((w2 + 620), (h2 + 400)
+    button = createButton('Next!');
+    button.size(100,40);
+    button.style("font-size", "30px");
+    button.position((w2 + 720), (h2 + 400)
 );
     button.mousePressed(screenFive);
   }else
@@ -272,7 +289,9 @@ function checkThird() {
     fill(0,0,0);
     text('Complete! You finished the game!', 155, 100);
     button = createButton('Restart');
-    button.position((w2 + 620), (h2 + 400));
+    button.size(100,40);
+    button.style("font-size", "30px");
+    button.position((w2 + 720), (h2 + 400));
     button.mousePressed(reset);
   }else{
     resetButton();
@@ -294,7 +313,9 @@ function check() {
     fill(0,0,0);
     text('Correct!', 375, 100);
     button = createButton('Next!');
-    button.position((w2 + 620), (h2 + 400));
+    button.size(100,40);
+    button.style("font-size", "30px");
+    button.position((w2 + 720), (h2 + 400));
     button.mousePressed(reset2);
   }else{
     resetButton();
@@ -310,7 +331,9 @@ function resetButton()
   fill(0,0,0);
   text('INCORRECT', 300, 100);
   button = createButton('reset');
-  button.position((w2 + 620), (h2 + 400));
+  button.size(100,40);
+  button.style("font-size", "30px");
+  button.position((w2 + 720), (h2 + 400));
   button.mousePressed(reset);
 }
 //function to reset to main menu
@@ -328,7 +351,9 @@ function reset()
   //call the first screen
   randomize();
   screenOne();
-  nextOne = createButton('Next');
+  nextOne = createButton('Next!');
+  nextOne.size(100,40);
+  nextOne.style("font-size", "30px");
   nextOne.position((w2 + 520), (h2 + 400));
   nextOne.mousePressed(screenTwo);
 }
