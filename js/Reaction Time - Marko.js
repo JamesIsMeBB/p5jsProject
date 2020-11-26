@@ -77,14 +77,11 @@ function resetButton()
  
 	if (typeof button == "undefined")
 	{
-		button = createButton('reset');
+		button = createButton('Reset!');
 		button.position((w+520),(h+400));
         button.size(100,40);
         button.style("font-size", "30px");
- 
- 
- 
- 
+		
 		button.mousePressed(reset);
 	}
  

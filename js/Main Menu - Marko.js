@@ -2,6 +2,15 @@ const Y_AXIS = 1;
 const X_AXIS = 2;
 let c1, c2;
 let img;
+var a;
+var b;
+var a1 = 0;
+var a2 = 0;
+var b1 = 0;
+var b2 = 0;
+var d1 = 0;
+var d2 = 0;
+
  
 function setGradient(x, y, w, h, c1, c2, axis) {
   noFill();
@@ -41,19 +50,24 @@ function setup() {
   
   img2 = loadImage('imgs/reaction.jpg');
   
-  c1 = color(188,178,255);
-  c2 = color(189,211,255);
-  setGradient(0, 0, 1150, 600, c1, c2, 1);
 }
  
  
 function draw() {
+	
+  a = mouseX/25;
+  b = mouseY/25;
+	
+  c1 = color(188 + a,178 + a,255);
+  c2 = color(189 + b,211 + b,255);
+  setGradient(0, 0, 1150, 600, c1, c2, 1);
  
-	background("blue");
+  buttonColor();
+ 
   //title
   stroke(0);
   strokeWeight(4);
-  fill('white')
+  fill(255, 255, 255);
   rect(378,35, 400, 100, 20);
   
   strokeWeight(0);
@@ -65,7 +79,7 @@ function draw() {
 //react  
   stroke(0);
   strokeWeight(4);
-  fill('white')
+  fill(255 - b1, 255 - b2, 255);
   rect(112,426, 170, 120, 20);
   
   strokeWeight(0);
@@ -81,7 +95,7 @@ function draw() {
  //minder finder  
   stroke(0);
   strokeWeight(4);
-  fill('white')
+  fill(255 - d1, 255 - d2, 255);
   rect(475,426, 170, 120, 20);
   
   strokeWeight(0);
@@ -98,30 +112,20 @@ function draw() {
 //be quick
   stroke(0);
   strokeWeight(4);
-  fill('white')
+  fill(255 - a1, 255 - a2, 255);
   rect(840,426, 170, 120, 20);
-  
   
   strokeWeight(0);
   fill('black')
   textSize(40);
   text('Be Quick',845,500);
   
-  
   stroke(0);
   strokeWeight(10);
   rect(825,200,200,190)
   image(img, 825,200,200,190)
+  
 }
-
-// React
-// rect(112,426, 170, 120, 20);
-
-// MINDER Finder
-//  rect(475,426, 170, 120, 20);
-
-// BE Quick
-//  rect(840,426, 170, 120, 20);
 
 function mouseClicked()
 {
@@ -140,6 +144,37 @@ function mouseClicked()
 		window.location.href = "Be Quick.html";
 	}
 	
+}
+
+function buttonColor()
+{
+	if ( (mouseX > 112) && (mouseX < 282) && (mouseY > 426) && (mouseY < 546) )
+	{
+		b1 = 67;
+		b2 = 77;
+	}
+	
+	else if ( (mouseX > 475) && (mouseX < 645) && (mouseY > 426) && (mouseY < 546) )
+	{
+		d1 = 67;
+		d2 = 77;
+	}
+	
+	else if ( (mouseX > 840) && (mouseX < 1010) && (mouseY > 426) && (mouseY < 546) )
+	{
+		a1 = 67;
+		a2 = 77;
+	}
+	
+	else
+	{
+		a1 = 0;
+		a2 = 0;
+		b1 = 0;
+		b2 = 0;
+		d1 = 0;
+		d2 = 0;
+	}
 }
 
 

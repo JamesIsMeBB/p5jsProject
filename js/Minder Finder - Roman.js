@@ -96,12 +96,12 @@ function screenOne()
 function screenTwo()
 {
  
-  background(189,211,255);
+  background(211, 211, 211);
   r = g = b = a = w = c = x = z = n = m = 255;
  
-  button = createButton('submit');
-  button.size(100,40);
-  button.style("font-size", "30px");
+  button = createButton('Submit!');
+  button.size(100,34);
+  button.style("font-size", "25px");
   button.position((w2 + 720), (h2 + 400));
   button.mousePressed(check);
   //this adds the value in a pattern (Not addition)
@@ -162,9 +162,9 @@ function screenFour(){
   nextScreen.hide();
   background(211, 211, 211);
   fill(255, 255, 0);
-  button = createButton('submit');
-  button.size(100,40);
-  button.style("font-size", "30px");
+  button = createButton('Submit!');
+  button.size(100,34);
+  button.style("font-size", "25px");
   button.position((w2 + 720), (h2 + 400)
 );
   button.mousePressed(checkSecond);
@@ -184,7 +184,7 @@ function screenFour(){
 function screenFive(){
   button.hide();
   input.hide();
-  background(211, 211, 211);
+  background(189,211,255);
   fill(255, 255, 0);
   //drawing circles
  
@@ -227,9 +227,9 @@ function screenSix(){
   nextScreen.hide();
   background(211, 211, 211);
   fill(255, 255, 0);
-  button = createButton('submit');
-  button.size(100,40);
-  button.style("font-size", "30px");
+  button = createButton('Submit!');
+  button.size(100,34);
+  button.style("font-size", "25px");
   button.position((w2 + 720), (h2 + 400)
 );
   button.mousePressed(checkThird);
@@ -288,9 +288,9 @@ function checkThird() {
     textSize(60);
     fill(0,0,0);
     text('Complete! You finished the game!', 155, 100);
-    button = createButton('Restart');
+    button = createButton('Restart!');
     button.size(100,40);
-    button.style("font-size", "30px");
+    button.style("font-size", "25px");
     button.position((w2 + 720), (h2 + 400));
     button.mousePressed(reset);
   }else{
@@ -330,9 +330,9 @@ function resetButton()
   textSize(90);
   fill(0,0,0);
   text('INCORRECT', 300, 100);
-  button = createButton('reset');
-  button.size(100,40);
-  button.style("font-size", "30px");
+  button = createButton('Reset!');
+  button.size(100,34);
+  button.style("font-size", "25px");
   button.position((w2 + 720), (h2 + 400));
   button.mousePressed(reset);
 }
