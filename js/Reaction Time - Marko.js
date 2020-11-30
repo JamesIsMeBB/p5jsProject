@@ -1,7 +1,7 @@
 //sets the timer to a random time at which to change the background color
 var timer = (Math.random() * (7) ) + 2;
  
- 
+var sound = 0;
 var result = false;
 var time = 0;
 var early = false;
@@ -33,7 +33,7 @@ function draw()
 //checks if a mouse has been clicked and starts a stopwatch
 function mouseClicked()
 {
-    if (mouseButton == LEFT && timer < 0)
+    if (mouseButton == LEFT && timer < 0 && sound == 0)
     {
  
  
@@ -41,7 +41,7 @@ function mouseClicked()
  
       playSound.play();
  
- 
+	  sound = 1;
       result = true;
     }  
 }
@@ -55,6 +55,7 @@ function reset()
 	time = 0;
   early = false;
 	stop2 = false;
+	  sound = 0;
 	if (mouseButton == LEFT)
     {
         button.hide();

@@ -62,7 +62,7 @@ function draw()
 function screenWelcome()
 {
  
-  background(100,100,100);
+  background(189,211,255);
   textAlign(CENTER);
   textSize(100);
   textFont("Impact", 55);
@@ -87,7 +87,7 @@ function screenWelcome()
 // [James] Fail Screen?
 function screenFail()
 { 
-  background("red");
+  background(189,211,255);
  
   textAlign(CENTER);
   textSize(75);
@@ -106,7 +106,7 @@ function screenFail()
  
 function screenCongrats()
 {
-  background("white");	
+  background(189,211,255);	
  
   textAlign(CENTER);
   textSize(75);
@@ -124,7 +124,7 @@ function screenCongrats()
 // [James] This is a test screen.
 function screenDecision1()
 {
-	background("red");
+	background(189,211,255);
 	fill("blue");
 	textSize(25);
 	textAlign(CENTER);
@@ -207,7 +207,7 @@ function screenCircles()
   textSize(75);
   textFont("Impact", 40)
  
-  background("grey")
+  background(189,211,255)
  
   fill("black")
   text("Choose your shape:", 530, 100);
@@ -240,7 +240,7 @@ function screenRectangles()
   textSize(75);
   textFont("Impact", 40)
  
-  background("black")
+  background(189,211,255)
  
   fill("white")
   text("Choose your shape:", 530, 100);
@@ -266,7 +266,7 @@ function screenTriangles()
   textSize(75);
   textFont("Impact", 40)
  
-  background("grey")
+  background(189,211,255)
  
   fill("white")
   text("Choose your shape:", 530, 100);
@@ -293,6 +293,7 @@ function screenDecision2 ()
     } 
 }
  
+ 
 //Congrats Screen
  
 function screenCongrats()
@@ -301,7 +302,7 @@ function screenCongrats()
   textSize(75);
   textFont("Impact", 30)
  
-  background("white")
+  background(189,211,255)
  
   fill("black")
   text("CONGRATS! You chose the right object!", 540, 100);

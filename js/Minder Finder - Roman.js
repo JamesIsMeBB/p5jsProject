@@ -114,8 +114,7 @@ function screenTwo()
   input = createInput();
   input.size(260,34);
   input.style("font-size", "30px");
-  input.position((w2 + 420), (h2 + 400)
-);
+  input.position((w2 + 420), (h2 + 400));
   //sets guess value to the user input
 										
   stroke(0);
@@ -293,20 +292,27 @@ function checkSecond() {
     button = createButton('Next!');
     button.size(100,40);
     button.style("font-size", "30px");
-    button.position((w2 + 720), (h2 + 400)
-);
+    button.position((w2 + 720), (h2 + 400));
     button.mousePressed(screenFive);
   }else
   {
     resetButton();
-
+  
 	stroke(0);
 	strokeWeight(2);
 	fill('white');
-    rect(50,35, 1050, 100, 20);
-    textSize(60);
-	fill(0, 0, 0);
-    text('The pattern was '+rightNum, 250, 290);
+	rect(50,35, 1050, 100, 20);
+	textSize(60);
+	fill(0,0,0,);
+	text('The pattern was '+rightNum, 250, 290);
+  
+  	stroke(0);
+	strokeWeight(2);
+	fill('white');
+	rect(50,35, 1050, 100, 20);
+	textSize(75); 
+	fill(0,0,0);
+	text('INCORRECT!', 325, 110);
   }
 }
  
@@ -325,9 +331,11 @@ function checkThird() {
 	strokeWeight(2);
 	fill('white');
 	rect(50,35, 1050, 100, 20);
-    textSize(75);
+	
+    textSize(50);
     fill(0,0,0);
     text('Complete! You finished the game!', 155, 100);
+
     button = createButton('Restart!');
     button.size(100,40);
     button.style("font-size", "25px");
@@ -335,14 +343,23 @@ function checkThird() {
     button.mousePressed(reset);
   }else{
     resetButton();
-  }
-
-  stroke(0);
-  strokeWeight(2);
-  fill('white');
-  rect(50,35, 1050, 100, 20);
-  textSize(60);
-  text('The pattern was '+rightNum, 250, 290);
+  
+	stroke(0);
+	strokeWeight(2);
+	fill('white');
+	rect(50,35, 1050, 100, 20);
+	textSize(60);
+	fill(0,0,0,);
+	text('The pattern was '+rightNum, 250, 290);
+  
+  	stroke(0);
+	strokeWeight(2);
+	fill('white');
+	rect(50,35, 1050, 100, 20);
+	textSize(75); 
+	fill(0,0,0);
+	text('INCORRECT!', 325, 110);
+}
 }
  
 //checks if the guess is correct in first level
@@ -368,28 +385,28 @@ function check() {
     button.mousePressed(reset2);
   }else{
     resetButton();
-
+  
 	stroke(0);
 	strokeWeight(2);
 	fill('white');
 	rect(50,35, 1050, 100, 20);
-    textSize(60);
+	textSize(60);
+	fill(0,0,0,);
+	text('The pattern was '+rightNum, 250, 290);
+  
+  	stroke(0);
+	strokeWeight(2);
+	fill('white');
+	rect(50,35, 1050, 100, 20);
+	textSize(75); 
 	fill(0,0,0);
-    text('The pattern was '+rightNum, 250, 290);
+	text('INCORRECT!', 325, 110);
   }
 }
 //creates a reset button that shows as incorrect
 function resetButton()
 {
-  background(255,0,0);
-
-  stroke(0);
-  strokeWeight(2);
-  fill('white');
-  rect(50,35, 1050, 100, 20);
-  textSize(75);
-  fill(0,0,0);
-  text('INCORRECT!', 300, 100);
+  background(255, 0, 0);
   button = createButton('Reset!');
   button.size(100,34);
   button.style("font-size", "25px");
