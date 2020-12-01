@@ -1,13 +1,24 @@
 var w = 0;
 var h = 0;
 var screenChanger = 1;
+var timer = 0;
+var verifiedChange = 0;
+ 
+function preload(){
+ 
+  playSound = loadSound("sounds/wrong1.mp3");
+  playSound2 = loadSound("sounds/Alert-07.mp3");
+ 
+}
  
 function setup() 
 {
   var cnv = createCanvas(1150, 600);
   w = (windowWidth - width) / 2;
   h = (windowHeight - height) / 2;
-  cnv.position(w, h);
+  cnv.position(w, h); 
+  playSound.setVolume(0.3);
+  playSound2.setVolume(0.3);
 }
  
 // [James] Added code into the draw function that consists of if-statements to change between many of your screens by number! 
@@ -25,16 +36,6 @@ function draw()
 		screenWelcome();
 	}
  
-	else if (screenChanger == 2)
-	{
-		// [James] Any Screen you want to display with a certain "screenChanger" number, place here.
-	}
- 
-	else if (screenChanger == 3)
-	{
-		// [James] Any Screen you want to display with a certain "screenChanger" number, place here.
-	}
- 
 	else if (screenChanger == 4)
 	{
 		screenFail();
@@ -44,18 +45,21 @@ function draw()
 	{
 		screenCongrats();
 	}
+	
     else if (screenChanger == 6)
-      {
+    {
         screenCircles();
-      }
+    }
+	  
     else if (screenChanger == 7)
-      {
-        screenRectangles();
-      }
+    {
+		screenRectangles();
+    }
+	  
     else if (screenChanger == 8)
-      {
+    {
         screenTriangles();
-      }
+    }
 }
  
  // [James] Welcome screen? 
@@ -63,14 +67,20 @@ function screenWelcome()
 {
  
   background(189,211,255);
+  
+  stroke(0);
+  strokeWeight(4);
+  fill('white')
+  rect(50,35, 1050, 100, 20);
+  
+  strokeWeight(0);
   textAlign(CENTER);
   textSize(100);
   textFont("Impact", 55);
- 
   fill("black")
-  text("Please choose a shape", 540, 160);
+  text("Please choose a shape and remember it!", 570, 105);
  
- 
+  strokeWeight(1);
   fill("orange");
   rect(300,370,200,110);
  
@@ -87,38 +97,22 @@ function screenWelcome()
 // [James] Fail Screen?
 function screenFail()
 { 
-  background(189,211,255);
+  background(255,0,0);
  
+  stroke(0);
+  strokeWeight(4);
+  fill('white')
+  rect(50,35, 1050, 100, 20);
+ 
+  strokeWeight(0);
   textAlign(CENTER);
   textSize(75);
-  textFont("Impact", 40);
- 
+  textFont("Impact", 50);
   fill("black");
-  text("WRONG SHAPE", 550, 100);
- 
-  //time://display time
- 
- 	// What screen you want it to go to
-	// screenChanger = [some number here];
-}
- 
-//[James] Congrats Screen
- 
-function screenCongrats()
-{
-  background(189,211,255);	
- 
-  textAlign(CENTER);
-  textSize(75);
-  textFont("Impact", 30);
- 
-  fill("black");
-  text("CONGRATS! You chose the right object!", 0, 100);
-  //time: (display time it took)
- 
- 	// What screen you want it to go to
-	// screenChanger = [some number here];
- 
+  text("WRONG SHAPE!", 560, 105);
+  
+  resetButton();
+  
 }
  
 // [James] This is a test screen.
@@ -158,60 +152,72 @@ function mouseClicked()
         //triangleScreen
  
 	}
-   else  if ( (screenChanger == 8) &&  (mouseX > 384) && (mouseX < 595) && (mouseY > 200) && (mouseY < 300) && mouseButton == LEFT )
+	
+    if ( (verifiedChange == 1) && (screenChanger == 8) && (mouseX > 384) && (mouseX < 595) && (mouseY > 200) && (mouseY < 300) && mouseButton == LEFT )
 	{
       screenChanger = 5;
       //victory screen
+	  playSound2.play();
     }
-  else  if ( (screenChanger == 8) &&  (mouseX > 384) && (mouseX < 761) && (mouseY > 237) && (mouseY < 302) && mouseButton == LEFT )
+	
+    else if ( (verifiedChange == 1)  && (screenChanger == 8) && (mouseButton == LEFT) )
 	{
       screenChanger = 4;
       //fail screen
+	  playSound.play()
     }
-  else  if ( (screenChanger == 8) &&  (mouseX > 463) && (mouseX < 636) && (mouseY > 380) && (mouseY < 495) && mouseButton == LEFT )
+	
+	if ( (verifiedChange == 1) && (screenChanger == 7) && (mouseX > 600) && (mouseX < 800) && (mouseY > 210) && (mouseY < 320) && (mouseButton == LEFT) )
+	{
+      screenChanger = 5;
+      //victory screen
+	  playSound2.play();
+    }
+	
+    else if ( (verifiedChange == 1) && (screenChanger == 7) && (mouseButton == LEFT) )
 	{
       screenChanger = 4;
       //fail screen
+	  playSound.play()
     }
-  else  if ( (screenChanger == 6) &&  (mouseX < 710) && (mouseX >0 ) && (mouseY > 110) && (mouseY < 525) && mouseButton == LEFT )
-    {
+	
+	if ( (verifiedChange == 1) && (screenChanger == 6) && (mouseX > 750) && (mouseX < 850) && (mouseY > 250) && (mouseY < 350) && (mouseButton == LEFT) )
+	{
+      screenChanger = 5;
+      //victory screen
+	  playSound2.play();
+    }
+	
+    else if ( (verifiedChange == 1) && (screenChanger == 6) && (mouseButton == LEFT) )
+	{
       screenChanger = 4;
       //fail screen
+	  playSound.play();
     }
-   else  if ( (screenChanger == 6) &&  (mouseX > 729) && (mouseX < 855) && (mouseY > 244) && (mouseY < 330) && mouseButton == LEFT )
-    {
-      screenChanger = 5;
-      //victory screen
-    }
-  else  if ( (screenChanger == 7) &&  (mouseX > 600) && (mouseX < 804) && (mouseY > 210) && (mouseY < 312) && mouseButton == LEFT )
-    {
-      screenChanger = 5;
-      //victory screen
-    }
-  else  if ( (screenChanger == 7) &&  (mouseX > 240) && (mouseX < 450) && (mouseY > 196) && (mouseY < 516) && mouseButton == LEFT )
-    {
-      screenChanger = 4;
-      //Fail screen
-    }
-  else  if ( (screenChanger == 7) &&  (mouseX > 240) && (mouseX < 890) && (mouseY > 354) && (mouseY < 530) && mouseButton == LEFT )
-    {
-      screenChanger = 4;
-      //Fail screen
-    }
- 
 }
  
 function screenCircles()
 {
+  verifiedChange = 1;
+  timer = timer + 1/60;	
+  
+  background(189,211,255);
+  
+  stroke(0);
+  strokeWeight(4);
+  fill('white')
+  rect(50,35, 1050, 100, 20);
+
+  strokeWeight(0);    
   textAlign(CENTER);
   textSize(75);
-  textFont("Impact", 40)
- 
-  background(189,211,255)
+  textFont("Impact", 50)
  
   fill("black")
-  text("Choose your shape:", 530, 100);
+  text("Choose your shape, QUICKLY!: ", 560, 105);
+  text(round(timer, 1), 920, 105);
  
+  strokeWeight(1);   
   fill("pink")
   ellipse(660,300,100,120)
  
@@ -236,15 +242,26 @@ function screenCircles()
  
 function screenRectangles()
 {
+  verifiedChange = 1;
+  timer = timer + 1/60;	
+	
+  background(189,211,255)
+  
+  stroke(0);
+  strokeWeight(4);
+  fill('white')
+  rect(50,35, 1050, 100, 20);
+
+  strokeWeight(0);    
   textAlign(CENTER);
   textSize(75);
-  textFont("Impact", 40)
+  textFont("Impact", 50)
  
-  background(189,211,255)
- 
-  fill("white")
-  text("Choose your shape:", 530, 100);
- 
+  fill("black")
+  text("Choose your shape, QUICKLY!: ", 560, 105);
+  text(round(timer, 1), 920, 105);
+
+  strokeWeight(1);
   fill("yellow")
   rect(500,400,300,110)
  
@@ -262,15 +279,25 @@ function screenRectangles()
  
 function screenTriangles()
 {
+  verifiedChange = 1;	
+  timer = timer + 1/60;	
+  
+  background(189,211,255);	
+	
+  stroke(0);
+  strokeWeight(4);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
+
+  strokeWeight(0);  
   textAlign(CENTER);
-  textSize(75);
-  textFont("Impact", 40)
+  textFont("Impact", 50)
  
-  background(189,211,255)
+  fill("black")
+  text("Choose your shape, QUICKLY!: ", 560, 105);
+  text(round(timer, 1), 920, 105);
  
-  fill("white")
-  text("Choose your shape:", 530, 100);
- 
+  strokeWeight(1);
   fill("red")
   triangle(513,385.5,631,393,464,496)
  
@@ -285,27 +312,58 @@ function screenTriangles()
  
 }
  
-function screenDecision2 ()
-{
-  if ( (screenChanger == 0) &&  (mouseX > 397) && (mouseX < 584) && (mouseY > 199) && (mouseY < 300) && mouseButton == LEFT )
-	{
-      screenChanger = 1;
-    } 
-}
- 
- 
 //Congrats Screen
  
 function screenCongrats()
 {
+  background(0,255,0);
+	
+  stroke(0);
+  strokeWeight(4);
+  fill('white');
+  rect(50,35, 1050, 100, 20);
+	
+  strokeWeight(0);	
   textAlign(CENTER);
-  textSize(75);
-  textFont("Impact", 30)
- 
-  background(189,211,255)
+  textFont("Impact", 43)
  
   fill("black")
-  text("CONGRATS! You chose the right object!", 540, 100);
-  //time: (display time it took)
+  text("CONGRATS! You chose the right object in " + round(timer, 3) + " seconds!", 570, 100);
+  
+  resetButton();
  
 }
+
+function resetButton()
+{	
+ 
+	if (typeof button == "undefined")
+	{
+		button = createButton('Reset!');
+		button.position((w+520),(h+400));
+        button.size(100,40);
+        button.style("font-size", "30px");
+		
+		button.mousePressed(reset);
+	}
+ 
+	else
+	{
+		button.show();
+	}
+}
+
+function reset()
+{
+	screenChanger = 1;
+	timer = 0;
+	verifiedChange = 0;
+	
+	if (mouseButton == LEFT)
+    {
+        button.hide();
+    }
+}
+
+
+
