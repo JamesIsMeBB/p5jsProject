@@ -65,7 +65,6 @@ function draw()
  // [James] Welcome screen? 
 function screenWelcome()
 {
- 
   background(189,211,255);
   
   stroke(0);
@@ -81,14 +80,14 @@ function screenWelcome()
   text("Please choose a shape and remember it!", 570, 105);
  
   strokeWeight(1);
-  fill("orange");
-  rect(300,370,200,110);
+  fill(224, 132, 34)
+  rect(460,300,200,110); //x 460 - 660 y 300 - 410
  
-  fill("pink");
-  circle(300,270,100);
+  fill(224, 184, 201);
+  circle(220,358,100); //x 170 - 270 y 308 - 408
  
-  fill("red");
-  triangle(600, 300, 440, 200, 400, 300);
+  fill(255,0,0)
+  triangle(1020, 400, 860, 300, 820, 400); // x 820 - 1020 y 300 - 400
  
 	// What screen you want it to go to
 	// screenChanger = [some number here];
@@ -134,26 +133,26 @@ function screenDecision1()
 // different screens and you can switch up what portion the right answer is in and what not. 
 function mouseClicked()
 {
-	if ( (screenChanger == 1) && (mouseX > 240) && (mouseX < 387) && (mouseY > 213) && (mouseY < 322) && mouseButton == LEFT )
+	if ( (screenChanger == 1) && (mouseX > 170) && (mouseX < 270) && (mouseY > 308) && (mouseY < 408) && mouseButton == LEFT )
 	{
 		screenChanger = 6;
 		//circle screen
 	}
  
-	else if ( (screenChanger == 1) && (mouseX > 280) && (mouseX < 485) && (mouseY > 369) && (mouseY < 482) && mouseButton == LEFT )
+	else if ( (screenChanger == 1) && (mouseX > 460) && (mouseX < 660) && (mouseY > 300) && (mouseY < 410) && mouseButton == LEFT )
 	{
 		screenChanger = 7;
 		//Rectangle screen
 	}
  
-	else if ( (screenChanger == 1) &&  (mouseX > 397) && (mouseX < 584) && (mouseY > 199) && (mouseY < 300) && mouseButton == LEFT )
+	else if ( (screenChanger == 1) &&  (mouseX > 820) && (mouseX < 1020) && (mouseY > 300) && (mouseY < 400) && mouseButton == LEFT )
 	{	
 		screenChanger = 8;
         //triangleScreen
  
 	}
 	
-    if ( (verifiedChange == 1) && (screenChanger == 8) && (mouseX > 384) && (mouseX < 595) && (mouseY > 200) && (mouseY < 300) && mouseButton == LEFT )
+    if ( (verifiedChange == 1) && (screenChanger == 8) && (mouseX > 50) && (mouseX < 250) && (mouseY > 400) && (mouseY < 500) && mouseButton == LEFT )
 	{
       screenChanger = 5;
       //victory screen
@@ -167,7 +166,7 @@ function mouseClicked()
 	  playSound.play()
     }
 	
-	if ( (verifiedChange == 1) && (screenChanger == 7) && (mouseX > 600) && (mouseX < 800) && (mouseY > 210) && (mouseY < 320) && (mouseButton == LEFT) )
+	if ( (verifiedChange == 1) && (screenChanger == 7) && (mouseX > 490) && (mouseX < 600) && (mouseY > 380) && (mouseY < 580) && (mouseButton == LEFT) )
 	{
       screenChanger = 5;
       //victory screen
@@ -181,7 +180,7 @@ function mouseClicked()
 	  playSound.play()
     }
 	
-	if ( (verifiedChange == 1) && (screenChanger == 6) && (mouseX > 750) && (mouseX < 850) && (mouseY > 250) && (mouseY < 350) && (mouseButton == LEFT) )
+	if ( (verifiedChange == 1) && (screenChanger == 6) && (mouseX > 850) && (mouseX < 950) && (mouseY > 250) && (mouseY < 350) && (mouseButton == LEFT) )
 	{
       screenChanger = 5;
       //victory screen
@@ -217,27 +216,39 @@ function screenCircles()
   text("Choose your shape, QUICKLY!: ", 560, 105);
   text(round(timer, 1), 920, 105);
  
-  strokeWeight(1);   
-  fill("pink")
-  ellipse(660,300,100,120)
+  strokeWeight(1);  
+  
+  fill(235, 200, 211)
+  ellipse(660,270,100,120)
  
-  fill("pink")
-  ellipse(660,460,100,110)
+  fill(224, 184, 201)
+  ellipse(660,510,100,110)
  
-  fill("purple")
-  circle(530,200,150) 
-  fill("pink")
-  circle(800,300,100)
+  fill(224, 184, 201)
+  circle(500,350,150) 
+  
+  fill(224, 184, 201)
+  circle(320,350,85)
+  
+  // Magic
+  fill(224, 184, 201)
+  circle(900,300,100)
+  
+  fill(224, 154, 201)
+  circle(1080,200,100)
+  
+  fill(240, 194, 201)
+  ellipse(920,500,120,80)
  
-  fill("red")
-  circle(400,400,100)
+  fill(200, 184, 201)
+  circle(300,200,100)
+  
+  fill(224, 194, 231)
+  circle(300,530,120)
  
- 
-  strokeWeight(1);
-  stroke(1);
+  fill(224, 184, 201)
   ellipse(150,400,80,100)
-  fill("pink")
- 
+
 }
  
 function screenRectangles()
@@ -246,7 +257,7 @@ function screenRectangles()
   timer = timer + 1/60;	
 	
   background(189,211,255)
-  
+
   stroke(0);
   strokeWeight(4);
   fill('white')
@@ -262,18 +273,38 @@ function screenRectangles()
   text(round(timer, 1), 920, 105);
 
   strokeWeight(1);
-  fill("yellow")
-  rect(500,400,300,110)
+  
+  fill(254, 112, 4)
+  rect(750,470,300,110)
+  
+  fill(224, 132, 34)
+  rect(620,150,240,110)
  
-  fill("orange")
-  rect(600,210,200,110) 
-  fill("yellow")
-  rect(300,200,100,130)
+  // Magic
+  fill(224, 132, 34)
+  rect(490,380,110,200) 
+  
+  strokeWeight(2);
+  fill(224, 132, 34)
+  rect(940,210,110,200) 
+  
+  fill(224, 162, 30)
+  rect(90,180,200,110)
+
+  strokeWeight(2);
+  fill(224, 162, 30)
+  rect(340,240,130,140)
+
+  strokeWeight(1);  
+  
+  fill(224, 132, 34)
+  rect(490,200,100,130, 8)
  
-  strokeWeight(1);
-  stroke(1);
-  fill("orange")
-  rect(250,370,200,130)
+  fill(224, 132, 34)
+  rect(150,370,140,200)
+  
+  fill(224, 132, 34)
+  rect(670,265,110,200, 7) 
  
 }
  
@@ -283,6 +314,8 @@ function screenTriangles()
   timer = timer + 1/60;	
   
   background(189,211,255);	
+  
+  text("X: " + mouseX + " " + "Y: " + mouseY, 150, 200);
 	
   stroke(0);
   strokeWeight(4);
@@ -298,17 +331,41 @@ function screenTriangles()
   text(round(timer, 1), 920, 105);
  
   strokeWeight(1);
-  fill("red")
+  
+  fill(255,0,0)
+  strokeWeight(2);
   triangle(513,385.5,631,393,464,496)
  
-  fill("red")
-  triangle(765,240,641,240,700,300) 
-  fill("red")
- 
- 
+  fill(255,0,0)
   strokeWeight(1);
-  stroke(1);
+  triangle(765,240,641,240,700,300) 
+  
+  fill(255,0,0)
+  triangle(300,420,180,590,360,520)
+
+  fill(255,0,0)
+  triangle(605,550,720,550,690,390)   
+  
+  // Magic
+  fill(255,0,0)
+  triangle(250,400,90,500,50,400)
+  
+  // Similar
+  fill(255,20,90)
+  triangle(260,300,170,200,100,300)
+  
+  // Similar
+  fill(225,0,0)
+  triangle(1030,310,870,230,840,300)
+  
+  // Identical Size
+  fill(165,57,69)
   triangle(600,300,440,200,400,300)
+  
+  // Identical Size
+  fill(255,0,0)
+  strokeWeight(2);
+  triangle(1000,500,840,400,800,500)
  
 }
  
@@ -340,9 +397,9 @@ function resetButton()
 	if (typeof button == "undefined")
 	{
 		button = createButton('Reset!');
-		button.position((w+520),(h+400));
-        button.size(100,40);
-        button.style("font-size", "30px");
+		button.position((w+470),(h+470));
+        button.size(200,80);
+        button.style("font-size", "37px");
 		
 		button.mousePressed(reset);
 	}

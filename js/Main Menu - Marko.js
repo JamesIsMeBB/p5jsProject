@@ -11,7 +11,6 @@ var b2 = 0;
 var d1 = 0;
 var d2 = 0;
 
- 
 function setGradient(x, y, w, h, c1, c2, axis) {
   noFill();
  
