@@ -314,8 +314,6 @@ function screenTriangles()
   timer = timer + 1/60;	
   
   background(189,211,255);	
-  
-  text("X: " + mouseX + " " + "Y: " + mouseY, 150, 200);
 	
   stroke(0);
   strokeWeight(4);
